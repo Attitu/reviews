@@ -46,12 +46,18 @@ function showPerson(person){
 	text.textContent = item.text;
 }
 
-prev.addEventListener('click', function(){
+next.addEventListener('click',function(){
 	currentItem++
-	showPerson();
+	if (currentItem > reviews.length -1) {
+		currentItem = 0;
+	}
+	showPerson(currentItem);
 });
 
 next.addEventListener('click', function(){
 	currentItem--
-	showPerson();
+	// if (currentItem > reviews.length -1) {
+	// 	currentItem = 0;
+	// }
+	showPerson(currentItem);
 });
